@@ -1,16 +1,16 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("redz hub : Blox Fruits", "BloodTheme")
 
-local Tab = Window:NewTab("Farms / Combat")
-local Section = Tab:NewSection("Combat & Bosses")
+local Tab = Window:NewTab("الفرم والقتال")
+local Section = Tab:NewSection("القتال والبوصات")
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local RunService = game:GetService("RunService")
 
--- 1. Auto Attack
+-- 1. الهجوم التلقائي
 local _G_AutoAttack = false
-Section:Toggle("Auto Attack", "Auto attack with equipped tool", false, function(state)
+Section:Toggle("الهجوم التلقائي", "يضرب تلقائياً بالسلاح المفعل", false, function(state)
     _G_AutoAttack = state
 end)
 
@@ -25,9 +25,9 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- 2. Super Boss Damage & Fast Attack
+-- 2. دمج خارق للبوصات
 local _G_SuperBoss = false
-Section:Toggle("Super Boss Damage", "High damage and fast cooldown bypass", false, function(state)
+Section:Toggle("دمج خارق للبوصات", "دمج عالي وتخطي وقت الانتظار للهجمات", false, function(state)
     _G_SuperBoss = state
 end)
 
@@ -56,9 +56,9 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- 3. Auto Farm Bosses
+-- 3. قتل البوصات تلقائياً
 local _G_AutoBoss = false
-Section:Toggle("Auto Farm Bosses", "Teleport and kill bosses automatically", false, function(state)
+Section:Toggle("قتل البوصات تلقائياً", "الانتقال وقتل البوصات بشكل تلقائي", false, function(state)
     _G_AutoBoss = state
 end)
 
@@ -84,8 +84,8 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
--- 4. Super WalkSpeed
-Section:Toggle("Super WalkSpeed (120)", "High speed movement", false, function(state)
+-- 4. سرعة خارقة
+Section:Toggle("سرعة خارقة (120)", "زيادة سرعة حركة الشخصية", false, function(state)
     if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
         LocalPlayer.Character.Humanoid.WalkSpeed = state and 120 or 16
     end
